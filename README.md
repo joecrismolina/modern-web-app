@@ -33,4 +33,4 @@ by any file server of your choice.
 
 ## Author
 
-Joe Cris Molina - [joecris.molnia@gmail.com](mailto:joecris.molina@gmail.com?subject=[Github]%20A%20Modern%20Web%20Application)
+Joe Cris Molina - [joecris.molina@gmail.com](mailto:joecris.molina@gmail.com?subject=[Github]%20A%20Modern%20Web%20Application)
