@@ -187,10 +187,111 @@ In the next section, we will use the React front end library to build a simple w
 
 ## Let's Create a React Application, without using create-react-app!
 
+[React](https://reactjs.org/) is a modern Javascript library for web front-end development. It was created, open-sourced and being actively developed upon by **Facebook** .
+
+To use React in creating simple UI components in our application, we need to add React and ReactDOM libraries to our project's dependency.
+
+`npm install react react-dom --save`
+
+Note: We can alternatively use [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) which will do all the tooling and setup for you, but will be done under the hood. But since we want to know, how to setup Babel and Webpack ourserlves, we will not use create-react-app.
+
+Also, we need to add some additional Babel libraries to be able to compile React code.
+
+`npm install @babel/preset-react @babel/plugin-transform-runtime @babel/plugin-proposal-class-properties -D`
+
+We can always refer to the offical Babel docs for each of the libraries for their specifics but in general terms, these libraries will help compile JSX, classes, etc. to ES2015 format.
+
+Then we need some minor changes to our `.babelrc` configuration file
+
+```javascript
+{
+    "presets": ["@babel/preset-env", "@babel/preset-react"], // add react preset!
+    "plugins": [ // Add the plugins here!
+        ["@babel/plugin-transform-runtime",
+          {
+            "regenerator": true
+          }
+        ],
+        ["@babel/plugin-proposal-class-properties"]
+    ]
+}
+```
+
+Now we can create the 2 basic React components
+* Functional component
+* Class component
+
+#### **`./src/lib/react-function-component.js`**
+```javascript
+import React from 'react';
+
+const ReactFuncComp = (props) => {
+    return (
+        <>
+            <h1>A React Application</h1>
+            <p>without using create-react-app</p>
+            <br />
+            <p>Hello, {props.name || 'World'}!</p>
+        </>
+    );
+}
+
+export default ReactFuncComp;
+```
+
+#### **`./src/lib/react-class-component.js`**
+```javascript
+import React, { Component } from 'react';
+import ReactFuncComp from './react-function-component';
+
+export default class ReactClassComp extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: ''
+        }
+    }
+
+    handleChange = (e) => {
+        this.setState({name: e.target.value});
+    }
+
+    render() {
+        return (
+            <>
+                <ReactFuncComp name={this.state.name} />
+                <br/>
+                <br/>
+                <p>What's your name?</p>
+                <input value={this.state.name} onChange={this.handleChange} />
+            </>
+        );
+    }
+}
+```
+
+And finally in our `index.js`
+
+#### **`./src/index.js`**
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import ReactClassComp from './lib/react-class-component';
+
+ReactDOM.render(<ReactClassComp />, document.getElementById('root'));
+```
+
+The React Components will simply render in the UI some greetings with the text changing to whatever we enter on the input. That's it!
+
+I will not go into much detail on how React components work as it may be too much information to cover on top of this project's main goal.
+
+React has a good documentation on their website that should get you up and going in no time!
+
 ---
 
 ## Notes and References
 
-* Webpack
-* Babel
-* React
+* [Webpack ver 4.42.1](https://webpack.js.org/)
+* [Babel ver 7.9.0](https://babeljs.io/)
+* [React ver 16.13.1](https://reactjs.org/)
