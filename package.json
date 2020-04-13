@@ -1,0 +1,25 @@
+{
+  "name": "modern-web-app",
+  "version": "1.0.0",
+  "description": "A Modern Web Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joecrismolina/modern-web-app.git"
+  },
+  "keywords": [
+    "javascript",
+    "webpack",
+    "babel",
+    "react"
+  ],
+  "author": "Joe Cris Molina (joecris.molina@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joecrismolina/modern-web-app/issues"
+  },
+  "homepage": "https://github.com/joecrismolina/modern-web-app#readme"
+}
