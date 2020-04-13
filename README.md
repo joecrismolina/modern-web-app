@@ -6,11 +6,11 @@ This project aims to help developers gain a better understanding on
 how modern Javascript frameworks and tooling are utilised to create
 modern web applications.
 
-This project will help you create [Moder Web Applications](./MODERNWEBAPP.md) using modern Javascript toolings like Webpack and Babel.
+This project will help you create [Modern Web Applications](./MODERNWEBAPP.md) using modern Javascript toolings like Webpack and Babel.
 
 You will be able to create a React Application from scratch!
 
-So first, let's go to [Moder Web Applications](./MODERNWEBAPP.md) and checkout how everything fits together nicely.
+So first, let's go to [Modern Web Applications](./MODERNWEBAPP.md) and checkout how everything fits together nicely.
 
 ## Requirements
 
