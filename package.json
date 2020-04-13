@@ -4,7 +4,9 @@
   "description": "A Modern Web Application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --open",
+    "build": "webpack",
+    "build:dev": "webpack --mode=development"
   },
   "repository": {
     "type": "git",
@@ -21,5 +23,12 @@
   "bugs": {
     "url": "https://github.com/joecrismolina/modern-web-app/issues"
   },
-  "homepage": "https://github.com/joecrismolina/modern-web-app#readme"
+  "homepage": "https://github.com/joecrismolina/modern-web-app#readme",
+  "devDependencies": {
+    "babel-loader": "^8.1.0",
+    "html-webpack-plugin": "^4.2.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
 }
